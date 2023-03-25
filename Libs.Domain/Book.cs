@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace Lib.Domain
 {
     public class Book
