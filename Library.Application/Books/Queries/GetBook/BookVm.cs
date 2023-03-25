@@ -10,7 +10,7 @@ namespace Library.Application.Books.Queries.GetBooks
         public Guid Id { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }    
-        public DateTime CreationDate { get; set; }
+        public DateTime PublicationDate { get; set; }
         public DateTime? EditDate { get; set; }
         public void Mapping (Profile profile)
         {
@@ -21,8 +21,8 @@ namespace Library.Application.Books.Queries.GetBooks
                  .ForMember(bookVm => bookVm.Author,
                         opt => opt.MapFrom(book => book.Author))
 
-                  .ForMember(bookVm => bookVm.CreationDate,
-                        opt => opt.MapFrom(book => book.CreationDate))
+                  .ForMember(bookVm => bookVm.PublicationDate,
+                        opt => opt.MapFrom(book => book.PublicationDate))
 
                    .ForMember(bookVm => bookVm.EditDate,
                         opt => opt.MapFrom(book => book.EditTime))

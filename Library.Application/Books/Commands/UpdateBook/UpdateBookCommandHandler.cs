@@ -22,9 +22,10 @@ namespace Library.Application.Books.Commands.UpdateBook
             {
                 throw new NotFoundException(nameof(Book), request.Id);
             }
-            entity.Author= request.Author;
+            entity.AuthorId= request.AuthorId;
             entity.Title = request.Title;
             entity.EditTime = DateTime.Now;
+            entity.PublicationDate = request.PublicationDate;
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
 

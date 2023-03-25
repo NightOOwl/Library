@@ -20,11 +20,10 @@ namespace Library.Application.Books.Commands.CreateBook
         {
             var book = new Book
             {
-                AuthorId = request.AuthorId,
-                Author = request.Author,
+                AuthorId = request.AuthorId,              
                 Id = Guid.NewGuid(),
                 Title = request.Title,
-                CreationDate = DateTime.Now,
+                PublicationDate = request.PublicationDate,
                 EditTime = null
             };
             await _dbContext.Books.AddAsync(book,cancellationToken);

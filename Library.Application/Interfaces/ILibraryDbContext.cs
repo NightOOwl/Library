@@ -13,6 +13,5 @@ namespace Library.Application.Interfaces
     {
         DbSet <Book> Books { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-
     } 
 }
