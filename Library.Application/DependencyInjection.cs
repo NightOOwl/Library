@@ -2,7 +2,7 @@
 using MediatR;
 using System.Reflection;
 using FluentValidation;
-using Library.Application.Common.Behaviors;
+
 
 namespace Library.Application
 {
@@ -10,9 +10,7 @@ namespace Library.Application
     {
         public static IServiceCollection AddAplication (this IServiceCollection services)
         {
-            services.AddMediatR(Assembly.GetExecutingAssembly());
-            services.AddValidatorsFromAssemblies(new [] { Assembly.GetExecutingAssembly() });   
-            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));          
             return services;
         }
     }
