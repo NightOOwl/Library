@@ -2,7 +2,7 @@
 using AutoMapper.QueryableExtensions;
 using Library.Application.Interfaces;
 using MediatR;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.Application.Authors.Queries.GetAuthorList
 {

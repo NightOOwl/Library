@@ -8,7 +8,7 @@ namespace Library.Persistance
 {
     public class DbInitializer
     {
-        public static void Initialize (BooksDbContext context)
+        public static void Initialize (LibDbContext context)
         {
             context.Database.EnsureCreated();   
         }

@@ -3,7 +3,7 @@ using Lib.Domain;
 using Library.Application.Common.Exceptions;
 using Library.Application.Interfaces;
 using MediatR;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.Application.Authors.Queries.GetAuthor
 {

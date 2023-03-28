@@ -10,14 +10,16 @@ using System.Threading.Tasks;
 
 namespace Library.Persistance
 {
-    public class BooksDbContext : DbContext, IBooksDbContext
+    public class LibDbContext : DbContext, IBooksDbContext,IAuthorDbContext
     {
         public DbSet<Book> Books { get; set; }
-        public BooksDbContext (DbContextOptions <BooksDbContext> options)
+        public DbSet<Author> Authors { get; set; }
+        public LibDbContext (DbContextOptions <LibDbContext> options)
             : base (options) { }
         protected override void OnModelCreating ( ModelBuilder builder)
         {
             builder.ApplyConfiguration(new BookConfiguration());
+            builder.ApplyConfiguration(new AuthorConfiguration());
             base.OnModelCreating (builder);
         }
     }

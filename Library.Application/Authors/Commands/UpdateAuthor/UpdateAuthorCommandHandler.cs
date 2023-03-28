@@ -2,7 +2,7 @@
 using Library.Application.Common.Exceptions;
 using Library.Application.Interfaces;
 using MediatR;
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Library.Application.Authors.Commands.UpdateAuthor
 {
@@ -24,7 +24,7 @@ namespace Library.Application.Authors.Commands.UpdateAuthor
             }          
             entity.FirstName = request.FirstName;
             entity.LastName = request.LastName;
-            entity.Coutry = request.Country;
+            entity.Country = request.Country;
             entity.BirthDate = request.BirthDate;
             entity.EditTime = DateTime.Now;
            
